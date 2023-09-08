@@ -3,16 +3,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pona anu ike</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20vh;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 1.2em;
+            display: block;
+        }
+
+        input[type="text"] {
+            font-size: 1em;
+            padding: 10px;
+        }
+
+        button {
+            font-size: 1em;
+            padding: 10px 20px;
+        }
+
+        #result {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>pona anu ike</h1>
+
+    <h2 id="result"></h2>
+
     <form id="nameForm">
         <label for="nameInput">o toki e nimi sina: </label>
         <input type="text" id="nameInput" placeholder="o toki e nimi sina" required>
         <button type="submit">o kipisi.</button>
     </form>
-    
-    <h2 id="result"></h2>
 
     <script>
         function stringToHash(str) {
