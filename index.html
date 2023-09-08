@@ -7,25 +7,29 @@
 <body>
     <h1>pona anu ike</h1>
     <form id="nameForm">
-        <label for="nameInput">Enter name:</label>
+        <label for="nameInput">o toki e nimi sina: </label>
         <input type="text" id="nameInput" placeholder="o toki e nimi sina" required>
-        <button type="submit">Convert</button>
+        <button type="submit">o kipisi.</button>
     </form>
     
     <h2 id="result"></h2>
 
     <script>
+        function stringToHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = (hash << 5) - hash + char;
+            }
+            return hash;
+        }
+
         document.getElementById('nameForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const name = document.getElementById('nameInput').value;
-            let number = 0;
+            const number = stringToHash(name);
 
-            for (let i = 0; i < name.length; i++) {
-                // Use ASCII values and add them up
-                number += name.charCodeAt(i) * 3;
-            }
-            
             if (number % 2 === 0) {
                 document.getElementById('result').textContent = '+';
             } else {
