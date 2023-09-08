@@ -2,9 +2,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pona anu ike</title>
+    <title>pona anu ike</title>
 </head>
 <body>
-    <h1>Pona anu ike</h1>
+    <h1>pona anu ike</h1>
+    <form id="nameForm">
+        <label for="nameInput">Enter name:</label>
+        <input type="text" id="nameInput" placeholder="o toki e nimi sina" required>
+        <button type="submit">Convert</button>
+    </form>
+    
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('nameInput').value;
+            let number = 0;
+
+            for (let i = 0; i < name.length; i++) {
+                // Use ASCII values and add them up
+                number += name.charCodeAt(i);
+            }
+            
+            if (Math.random() + number % 2 === 0) {
+                document.getElementById('result').textContent = '+';
+            } else {
+                document.getElementById('result').textContent = '-';
+            }
+        });
+    </script>
 </body>
 </html>
