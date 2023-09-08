@@ -12,7 +12,7 @@
         <button type="submit">Convert</button>
     </form>
     
-    <div id="result"></div>
+    <h2 id="result"></h2>
 
     <script>
         document.getElementById('nameForm').addEventListener('submit', function(e) {
@@ -26,7 +26,7 @@
                 number += name.charCodeAt(i);
             }
             
-            if (Math.random() + number % 2 === 0) {
+            if (number % 2 === 0) {
                 document.getElementById('result').textContent = '+';
             } else {
                 document.getElementById('result').textContent = '-';
